@@ -73,7 +73,7 @@
                                     <li><a href="#">Entrar como</a>
                                         <ul class="dropdown">
 <li><a href="alunologar.php">Aluno</a></li>
-<li><a href="logarfuncionario.php">Funcionário</a></li>
+<li><a href="logarfuncionario.php">Fiscal</a></li>
 <!--<li><a href="course.html">Course</a></li>
 <li><a href="blog.html">Blog</a></li>
 <li><a href="contact.html">Contact</a></li>
