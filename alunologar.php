@@ -10,14 +10,14 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
-    <title>EDUMETL</title>
+    <title>CheckNotes</title>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <link rel="stylesheet" type="text/css" href="style.css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
     <!-- Favicon -->
-    <link rel="icon" href="img/core-img/favicon.ico">
+    <link rel="icon" href="img/core-img/icone.jpg">
 
     <!-- Core Stylesheet -->
     <link rel="stylesheet" href="style.css">
@@ -40,7 +40,7 @@
                     <div class="col-12 h-100">
                         <div class="header-content h-100 d-flex align-items-center justify-content-between">
                             <div class="academy-logo">
-                                <a href="index.php"><img src="img/core-img/logo.png" alt=""></a>
+                                <a href="index.php"><img src="img/core-img/logo4.jpg" alt=""></a>
                             </div>
                             <div class="login-content">
                                 <!--<a href="#">Register / Login</a>-->
