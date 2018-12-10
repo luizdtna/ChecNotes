@@ -1,7 +1,7 @@
 <?php
 include ("server.php");
-
-$query = "SELECT id, username, snome, email, universidade, curso, pais, anos   FROM registo WHERE pais='Brasil' order by username, id ASC "  ;
+$nomepais = $_GET['pais'];
+$query = "SELECT id, username, snome, email, universidade, curso, pais, anos   FROM registo WHERE pais = '$nomepais'  order by username, id ASC "  ;
 $results = mysqli_query($db, $query);
 
 
@@ -10,6 +10,8 @@ $resultado2 = mysqli_query($db, $sql);
 $dados = mysqli_fetch_array($resultado2);*/
 
 ?>
+<div class="container">
+<center>
 <table class="table table-bordered table-striped table-hover" border="">
   <thead class="thead-light">
   <tr>
@@ -50,3 +52,5 @@ $dados = mysqli_fetch_array($resultado2);*/
 }else{
   echo "Nenhum usuário encontrado";}?>
 </table>
+</center>
+</div>

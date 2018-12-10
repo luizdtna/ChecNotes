@@ -1,5 +1,17 @@
-<?php session_start(); ?>
 
+<?php
+
+include_once ("server.php");
+session_start();
+
+$query = "SELECT username, snome, email, universidade, curso, pais, anos   FROM registo WHERE pais='Brasil' order by username, id ASC "  ;
+    
+
+    $results = mysqli_query($db, $query);
+    $dados = mysqli_fetch_array($results);
+
+
+?>
 <!DOCTYPE html>
 <html>
 
@@ -10,10 +22,19 @@
     width: 60%;
     border: 4px solid #73AD21;
     padding: 100px;
+
+}
+.table .thead-light th {
+  color: #401500;
+  background-color: #FFDDCC;
+  border-color: #792700;
 }
 </style>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CheckNotes</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -37,38 +58,34 @@
   <link rel="stylesheet" href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
 </head>
   <body class="hold-transition sidebar-mini">
     <div class="wrapper">
 
-     
-
-      <!-- Main Sidebar Container -->
-    <?php include_once('aside_Nav_Fiscal.php') ?>
-
-    <section class="col-lg-12 connectedSortable">
-    <div class="content-wrapper">
-      <br>
-      <center><h2>Aproveitamentos dos Estudantes</h2></center><br><br>
-      <div class="center">   
-         <center>       
-          <div id="pnlMain" class="m-panel-body">
-            <div id="m_m113" class="m-panelcontrol-box">
-              <a class="btn btn-app" href="dadosfuncionario.php">
-              <i class="fa fa-address-card-o"></i>Meus Dados</a>
-              <a class="btn btn-app" href="">
-              <i class="fa fa-lock"></i>Alterar senha</a>
-              <a class="btn btn-app" href="">
-              <i class="fa fa-envelope-o"></i>Alterar email</a>
-            </div>
-          </div>
-        </center>
+     <?php include_once('aside_Nav_Fiscal.php') ?>
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <div class="content-header">
+          <div class="container-fluid">
+            <div class="row mb-2">
+              <div class="col-sm-6">
+              </div><!-- /.col -->
+              <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                  <li class="breadcrumb-item"><a href="#">Home</a></li>
+                  <li class="breadcrumb-item active">METL</li>
+                </ol>
+              </div><!-- /.col -->
+            </div><!-- /.row -->
+          </div><!-- /.container-fluid -->
+        </div>
+        <center><h1>Lista e Aproveitamentos dos Estudantes: <?php echo $_GET['pais'] ?> </h1></center><br><br>
+        <?php include_once ('listaalunos.php');  ?>
       </div>
     </div>
-       
-    </section>
-     
-
+      
     <!-- jQuery -->
     <script src="plugins/jquery/jquery.min.js"></script>
     <!-- jQuery UI 1.11.4 -->
