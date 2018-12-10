@@ -1,4 +1,7 @@
-<?php session_start(); ?>
+<?php session_start(); 
+include_once ('verificaSession.php');
+
+?>
 
 <!DOCTYPE html>
 <html>
