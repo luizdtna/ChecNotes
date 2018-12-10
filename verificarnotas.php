@@ -14,10 +14,10 @@ $id_registo2 = $dados2['id'];*/
 
 $sql = "SELECT id as 'id_registo', username, id_arquivo, nome_arquivo, caminho_arquivo from registo join arquivos on id = id_aluno where username = '$nome_registo';";
 $resultado2 = mysqli_query($db, $sql);
-$dados = mysqli_fetch_array($resultado2);
-$id_aluno = $dados['id_registo'];
+//$dados = mysqli_fetch_array($resultado2);
+//$id_aluno = $dados['id_registo'];
 
-$nomeArquivo =  'arquivos/'.$id_aluno.'';
+//$nomeArquivo =  'arquivos/'.$id_aluno.'';
 #echo $dados['username'];
 ?>
 <!DOCTYPE html>
@@ -87,7 +87,7 @@ $nomeArquivo =  'arquivos/'.$id_aluno.'';
             <tr>
             
               <th>Nome do Arquivo</th>
-              <th>Nome</th>
+              
               <th>Arquivo</th>
           
             </tr>
@@ -95,12 +95,12 @@ $nomeArquivo =  'arquivos/'.$id_aluno.'';
         
           <?php 
             if(($results) AND ($results->num_rows != 0)){ 
-            while($row_usuario = mysqli_fetch_assoc($results)){ 
+            while($dados = mysqli_fetch_array($resultado2)){ 
           ?>
           <tr>
-            <td><?php echo $dados['username'] . "<br>"; ?></td>
-            <td><?php echo $row_usuario['username'] . "<br>"; ?></td>
-            <td><a href="arquivos/pasta1/lista1.pdf" download>baixar</a></td>
+           
+            <td><?php echo $dados['nome_arquivo'] . "<br>"; ?></td>
+            <td><a href="<?php echo $dados['caminho_arquivo']; ?>" download><button class="btn btn-info">baixar</button></a><button class="btn btn-danger">Deletar</button></td>
           </tr>
           
           <?php }?>
@@ -110,6 +110,7 @@ $nomeArquivo =  'arquivos/'.$id_aluno.'';
             echo "Nenhum usuário encontrado";}?>
         </table>
       </center>
+
 
     </div>
   </div>
