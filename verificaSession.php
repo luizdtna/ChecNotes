@@ -1,10 +1,8 @@
 <?php 
 
 
-if(!isset($_SESSION['success'])){
+if(!isset($_SESSION['successo@#logar'])){
 	header('location: logarfuncionario.php');
-}else{
-	echo 'sucesso!!!!!';
 }
 
 ?>

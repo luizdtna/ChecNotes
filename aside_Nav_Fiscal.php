@@ -97,7 +97,7 @@
                     </a>
                   </li><br>
                   <li class="nav-item">
-                    <a href="logarfuncionario.php" class="nav-link">
+                    <a href="sair.php" class="nav-link">
                       <i class="fa fa-power-off"></i>
                       <p>Sair</p>
                     </a>
