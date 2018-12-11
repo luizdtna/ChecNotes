@@ -125,7 +125,7 @@
     </div>
     
     
-    <!-- ##### Footer Area Start ##### hgshhshhcs-->
+    <!-- ##### Footer Area Start ##### -->
 
     <!-- ##### All Javascript Script ##### -->
     <!-- jQuery-2.2.4 js -->
