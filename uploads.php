@@ -15,7 +15,7 @@ if (isset($_POST['submit'])){
 				$fileNameNew = uniqid('', true).".".$fileActualExt;
 				$fileDestination = 'uploads/'.$fileNameNew;
 				move_uploaded_file($fileTmpName, $fileDestination);
-				//header("Location: aluno.php?uploadsuccess");
+				//header("Location: aluno.php?uploadsuccess");teste
 				?>
 		<script> window.alert ("Arquivo enviados com sucesso");</script>
 
