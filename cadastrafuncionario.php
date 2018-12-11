@@ -64,7 +64,7 @@
 
     <!-- ##### Hero Area Start ##### -->
     <?php if (isset($_POST['reg_user'])) {
-        echo "variabel";
+        
     } ?>
     <div class="container">
     <center><h1 class="well">Formulário de cadastro</h1></center>
