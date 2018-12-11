@@ -125,7 +125,7 @@
     </div>
     
     
-    <!-- ##### Footer Area Start ##### Estamos sofrendo ate morte-->
+    <!-- ##### Footer Area Start ##### Estamos sofrendo ate morte jshhacjkzj-->
 
     <!-- ##### All Javascript Script ##### -->
     <!-- jQuery-2.2.4 js -->
