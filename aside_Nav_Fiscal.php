@@ -48,7 +48,12 @@
                 </a>
                 <ul class="nav nav-treeview">
                   
-                  
+                  <li class="nav-item">
+                    <a href="dadosfuncionario.php" class="nav-link">
+                      <i class="fa fa-address-card-o"></i>
+                      <p>Meus Dados</p>
+                    </a>
+                  </li>
                   <li class="nav-item">
                     <a href="cadastraaluno.php" class="nav-link">
                       <i class="fa fa-address-card-o"></i>

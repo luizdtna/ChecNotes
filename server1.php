@@ -41,10 +41,11 @@
 		if (count($errors) == 0) {
 			$password = md5($password_1);//encrypt the password before saving in the database
 			$sql = "INSERT INTO funcionario (username, snome, dia, mes, ano, email, telefone, endereco, cidade, estado, pais, password) 
-				VALUES('$username', '$snome', 0, 0, 0, '$email', $telefone,'$endereco', '$cidade', '$estado','$pais','$password_1')";
+				VALUES('$username', '$snome', 0, 0, 0, '$email', $telefone,'$endereco', '$cidade', '$estado','$pais','$password')";
 			mysqli_query($db, $sql)  or die((mysqli_error($db)));
 
 			$_SESSION['username'] = $username;
+
 			$_SESSION['success'] = "You are now logged in";
 			header('location: logarfuncionario.php');
 		
@@ -76,11 +77,13 @@
 			$dados = mysqli_fetch_array($resultado);
 
 			$username = $dados['username']." ".$dados['snome'];
-			$email = "";
+			$id = $dados['id'];
+			//$email = $dados['email'];
 
 			if (mysqli_num_rows($results) == 1) {
 				$_SESSION['nomeUserFunc'] = $username;
 				$_SESSION['successo@#logar'] = "You are now logged in";
+				$_SESSION['id'] = $id;
 				header('location: funcionario.php');
 			}else {
 				array_push($errors, "Email/Senha está errado");

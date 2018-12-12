@@ -88,11 +88,11 @@ $dados = mysqli_fetch_array($resultado);
                             <div class="row">
                                 <div class="col-sm-6 form-group">
                                     <label>Nome</label>
-                                    <input type="text" name="username" placeholder="Digite seu nome" class="form-control" value="<?php echo $dados['username']; ?>" readonly>
+                                    <input type="text" name="username" class="form-control" value="123" readonly>
                                 </div>
                                 <div class="col-sm-6 form-group">
                                     <label>Sobrenome</label>
-                                    <input type="text" name="snome" placeholder="Digite seu sobrenome" class="form-control"  value="<?php echo $dados['snome']; ?>" readonly>
+                                    <input type="text" name="snome" class="form-control"  value="<?php echo $dados['snome']; ?>" readonly>
                                 </div>
                             </div>  
                             <div class="row">
@@ -177,6 +177,7 @@ $dados = mysqli_fetch_array($resultado);
                             <label>Website</label>
                             <input type="text" placeholder="Enter Website Name Here.." class="form-control">
                         </div>-->
+                            </div>
                         <div class="input-group">
                             <div>
                                 <button type="submit" class="btn" name="atualizar-reg">Atualizar</button>

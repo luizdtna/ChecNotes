@@ -1,8 +1,12 @@
 <?php
 
-
 include ('server1.php');
+
 include_once ('verificaSessionFunc.php');
+$id = $_SESSION['id'];
+$sql = "SELECT * FROM funcionario WHERE id='$id';";
+$resultado = mysqli_query($db, $sql);
+$dados = mysqli_fetch_array($resultado);
 ?>
 
 <!DOCTYPE html>
@@ -84,80 +88,72 @@ include_once ('verificaSessionFunc.php');
                         <div class="row">
                             <div class="col-sm-6 form-group">
                                 <label>Nome</label>
-                                <input type="text" name="username"  class="form-control">
+                                <input type="text" name="username"  class="form-control" value="<?php echo $dados['username'];?>" readonly>
                             </div>
                             <div class="col-sm-6 form-group">
                                 <label>Sobrenome</label>
-                                <input type="text" name="snome"  class="form-control" >
+                                <input type="text" name="snome"  class="form-control" value="<?php echo $dados['snome']; ?>" readonly>
                             </div>
                         </div>  
-                        <div class="row">
-                            <div class="col-sm-4 form-group">
-                                <label>Data de nascimento</label>
-                                <input type="text" name="dia"  class="form-control">
-                            </div>  
-                            <div class="col-sm-4 form-group">
-                                <label>Mês</label>
-                                <input type="text" name="mes"  class="form-control" >
-                            </div>  
-                            <div class="col-sm-4 form-group">
-                                <label>Ano</label>
-                                <input type="text" name="ano"  class="form-control" >
-                            </div>      
-                        </div>
                         <div class="form-group">
                         <label>Email</label>
-                        <input type="email" name="email"  class="form-control" >
+                        <input type="email" name="email"  class="form-control" value="<?php echo $dados['email']; ?>">
                     </div>  
                         <div class="form-group">
                         <label>Telefone</label>
-                        <input type="text" name="telefone"  class="form-control">
+                        <input type="text" name="telefone"  class="form-control" value="<?php echo $dados['telefone']; ?>">
                     </div>      
                                     
                         <div class="form-group">
                             <label>Endereço atual</label>
                             <!--<textarea  placeholder="Digite seu endereço.." rows="3" class="form-control"></textarea>-->
-                            <input type="text" name="endereco"  class="form-control">
+                            <input type="text" name="endereco"  class="form-control" value="<?php echo $dados['endereco']; ?>">
                         </div>  
                         <div class="row">
                             <div class="col-sm-4 form-group">
                                 <label>Cidade</label>
-                                <input type="text" name="cidade"  class="form-control">
+                                <input type="text" name="cidade"  class="form-control" value="<?php echo $dados['cidade'];?>">
                             </div>  
                             <div class="col-sm-4 form-group">
                                 <label>Estado</label>
-                                <input type="text" name="estado"  class="form-control">
+                                <input type="text" name="estado"  class="form-control" value=" <?php echo $dados['estado']; ?>">
                             </div>  
                             <div class="col-sm-4 form-group">
                                 <label>País</label>
-                                <input type="text" name="pais"  class="form-control" >
+                                <input type="text" name="pais"  class="form-control" value="<?php echo $dados['pais']; ?>">
                             </div>      
                         </div>
-                          
-                        
                        
                         </div>
                         <div class="col-sm-12">
-                        <div class="row">
-                            <div class="col-sm-6 form-group">
-                                <label>Senha</label>
-                                <input type="password" name="password_1" class="form-control">
-                            </div>      
-                            <div class="col-sm-6 form-group">
-                                <label>Confirmar senha</label>
-                                <input type="password" name="password_2"  class="form-control">
-                            </div>  
-                        </div>  <br/>               
-                    
-                    <!--<div class="form-group">
-                        <label>Website</label>
-                        <input type="text" placeholder="Enter Website Name Here.." class="form-control">
-                    </div>-->
-                    <div class="input-group">
-            <button type="submit" class="btn" name="reg_user">Salvar</button>
-        </div>
-                    <!--<button type="submit" class="btn btn-lg btn-info" style="width:10%    ">Enviar</button> -->             
-                    </div>
+                            <div class="row">
+
+                                <div class="col-sm-3 form-group">
+                                    <label>Senha atual</label>
+                                    <input type="password" name="password_1" placeholder="Senha atualizar-reg" class="form-control">
+                                </div>      
+                                <div class="col-sm-3 form-group">
+                                    <label>Confirmar senha</label>
+                                    <input type="password" name="password_2" placeholder="Confirmar sua senha" class="form-control">
+                                </div>
+                                <div class="col-sm-3 form-group">
+                                    <label>Repetir nova senha</label>
+                                    <input type="password" name="password_2" placeholder="Confirmar sua senha" class="form-control">
+                                </div>
+
+
+                            </div>  <br/>               
+                        
+                        <!--<div class="form-group">
+                            <label>Website</label>
+                            <input type="text" placeholder="Enter Website Name Here.." class="form-control">
+                        </div>-->
+                            </div>
+                        <div class="input-group">
+                            <div>
+                                <button type="submit" class="btn" name="atualizar-reg">Atualizar</button>
+                            </div>
+                        </div>
                 </form> 
                 </div>
     </div>
