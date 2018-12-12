@@ -62,27 +62,7 @@
     </header><br/>
     <!-- ##### Header Area End ##### -->
 
-    <!-- ##### Hero Area Start ##### 
-    <?php if (isset($_POST['reg_user'])) {
-        $username = $_POST['username'];
-        $snome = $_POST['snome'];
-        $$email = $_POST['email'];
-        $telefone = $_POST['telefone'];
-        $endereco = $_POST['endereco'];
-        $cidade = $_POST['cidade'];
-        $estado = $_POST['estado'];
-        $pais = $_POST['pais'];
-        $password_1 = $_POST['password_1'];
-        $sql = "INSERT INTO `funcionario` ( `username`, `snome`, `dia`, `mes`, `ano`, `email`, `telefone`, `endereco`, `cidade`, `estado`, `pais`, `password`) VALUES ('$username', '$snome', 0, 0, 0, '$email',
-         '$telefone', '$endereco', '$cidade', '$estado', '$pais', '$password_1')";
-         //$sql = "INSERT INTO `funcionario` ( `username`) VALUES ('$_POST[username])";
-        if (mysqli_query($bd, $sql)) {
-            echo "New record created successfully";
-            header("location: logarfuncionario.php");
-        } else {
-        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-        }
-    } ?> -->
+   
     <div class="container" style="float: right;">
     <center><h1 class="col-lg-8 well">Formulário de cadastro</h1></center>
 
@@ -95,39 +75,39 @@
                     <div class="row">
                         <div class="col-sm-6 form-group">
                             <label>Nome</label>
-                            <input type="text" name="username" placeholder="Digite seu nome" class="form-control">
+                            <input type="text" name="username" placeholder="Digite seu nome" class="form-control" required="">
                         </div>
                         <div class="col-sm-6 form-group">
                             <label>Sobrenome</label>
-                            <input type="text" name="snome" placeholder="Digite seu sobrenome" class="form-control" >
+                            <input type="text" name="snome" placeholder="Digite seu sobrenome" class="form-control" required>
                         </div>
                     </div>  
                     <div class="row">   
                     </div>
                     <div class="form-group">
                         <label>Email</label>
-                        <input type="email" name="email" placeholder="Digite seu email" class="form-control" >
+                        <input type="email" name="email" placeholder="Digite seu email" class="form-control" required>
                     </div>  
                     <div class="form-group">
                         <label>Telefone</label>
-                        <input type="text" name="telefone" placeholder="Digite seu número de telefone" class="form-control">
+                        <input type="text" name="telefone" placeholder="Digite seu número de telefone" class="form-control" required>
                     </div>                  
                     <div class="form-group">
                         <label>Endereço atual</label>
-                        <input type="text" name="endereco" placeholder="Digite seu endereço (Rua e Número)" class="form-control">
+                        <input type="text" name="endereco" placeholder="Digite seu endereço (Rua e Número)" class="form-control" required>
                     </div>  
                     <div class="row">
                         <div class="col-sm-4 form-group">
                             <label>Cidade</label>
-                            <input type="text" name="cidade" placeholder="Digite o nome da cidade" class="form-control">
+                            <input type="text" name="cidade" placeholder="Digite o nome da cidade" class="form-control" required>
                         </div>  
                         <div class="col-sm-4 form-group">
                             <label>Estado</label>
-                            <input type="text" name="estado" placeholder="Digite o nome do estado" class="form-control">
+                            <input type="text" name="estado" placeholder="Digite o nome do estado" class="form-control" required>
                         </div>  
                         <div class="col-sm-4 form-group">
                             <label>País</label>
-                            <input type="text" name="pais" placeholder="Digite o nome do país" class="form-control" >
+                            <input type="text" name="pais" placeholder="Digite o nome do país" class="form-control" required>
                         </div>      
                     </div>
                 </div>
@@ -135,11 +115,11 @@
                     <div class="row">
                         <div class="col-sm-6 form-group">
                             <label>Senha</label>
-                            <input type="password" name="password_1" placeholder="Escolha sua senha" class="form-control">
+                            <input type="password" name="password_1" placeholder="Escolha sua senha" class="form-control" required>
                         </div>      
                         <div class="col-sm-6 form-group">
                             <label>Confirmar senha</label>
-                            <input type="password" name="password_2" placeholder="Confirmar sua senha" class="form-control">
+                            <input type="password" name="password_2" placeholder="Confirmar sua senha" class="form-control" required>
                         </div>  
                     </div>  
                     <br/>               

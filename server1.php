@@ -10,20 +10,9 @@
 
 	// REGISTER USER
 	if (isset($_POST['reg_user'])) {
-		// form validation: ensure that the form is correctly filled
-		if (empty($username)) { array_push($errors, "Inserir o nome"); }
-		if (empty($snome)) { array_push($errors, "Inserir o o sobrenome"); }
-		if (empty($dia)) { array_push($errors, "Inserir o dia do nascimento"); }
-		if (empty($mes)) { array_push($errors, "Inserir o mês "); }
-		if (empty($ano)) { array_push($errors, "Inserir o ano"); }
-		if (empty($email)) { array_push($errors, "Inserir o email"); }
-		if (empty($telefone)) { array_push($errors, "Inserir o telefone"); }
-		if (empty($endereco)) { array_push($errors, "Inserir o endereço"); }
-		if (empty($cidade)) { array_push($errors, "Inserir nome da cidade"); }
-		if (empty($estado)) { array_push($errors, "Inserir nome do estado"); }
-		if (empty($pais)) { array_push($errors, "Inserir o nome do país"); }
 		
-		if (empty($password_1)) { array_push($errors, "Digite a senha"); }
+		
+		
 		// receive all input values from the form
 		$username = mysqli_real_escape_string($db, $_POST['username']);
 		$snome = mysqli_real_escape_string($db, $_POST['snome']);
@@ -40,6 +29,8 @@
 		$password_1 = mysqli_real_escape_string($db, $_POST['password_1']);
 		$password_2 = mysqli_real_escape_string($db, $_POST['password_2']);
 
+		// form validation: ensure that the form is correctly filled
+	
 		
 
 		if ($password_1 != $password_2) {
@@ -50,9 +41,8 @@
 		if (count($errors) == 0) {
 			$password = md5($password_1);//encrypt the password before saving in the database
 			$sql = "INSERT INTO funcionario (username, snome, dia, mes, ano, email, telefone, endereco, cidade, estado, pais, password) 
-				VALUES('$username', '$snome', '$dia', '$mes', '$ano', '$email',
-				     '$telefone','$endereco', '$cidade', '$estado','$pais','$password')";
-			mysqli_query($db, $sql);
+				VALUES('$username', '$snome', 0, 0, 0, '$email', $telefone,'$endereco', '$cidade', '$estado','$pais','$password_1')";
+			mysqli_query($db, $sql)  or die((mysqli_error($db)));
 
 			$_SESSION['username'] = $username;
 			$_SESSION['success'] = "You are now logged in";
