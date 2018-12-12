@@ -33,20 +33,6 @@
 		$anos = mysqli_real_escape_string($db, $_POST['anos']);
 		$password_1 = mysqli_real_escape_string($db, $_POST['password_1']);
 		$password_2 = mysqli_real_escape_string($db, $_POST['password_2']);
-
-		// form validation: ensure that the form is correctly filled
-		if (empty($username)) { array_push($errors, "Inserir o nome"); }
-		if (empty($snome)) { array_push($errors, "Inserir o o sobrenome"); }
-		if (empty($email)) { array_push($errors, "Inserir o email"); }
-		if (empty($telefone)) { array_push($errors, "Inserir o telefone"); }
-		if (empty($endereco)) { array_push($errors, "Inserir o endereço"); }
-		if (empty($cidade)) { array_push($errors, "Inserir nome da cidade"); }
-		if (empty($estado)) { array_push($errors, "Inserir nome do estado"); }
-		if (empty($pais)) { array_push($errors, "Inserir o nome do país"); }
-		if (empty($universidade)) { array_push($errors, "Inserir o nome da universidade"); }
-		if (empty($curso)) { array_push($errors, "Inserir o nome do curso"); }
-		if (empty($anos)) { array_push($errors, "Inserir o ano"); }
-		if (empty($password_1)) { array_push($errors, "Digite a senha"); }
 		
 
 		if ($password_1 != $password_2) {
@@ -75,15 +61,16 @@
 			$idAluno = $dados2['id'];
 			if(mkdir(__DIR__.'/arquivos/'.$idAluno.'/', 0755, true)){
 				if(mkdir(__DIR__.'/arquivos/'.$idAluno.'/provas/', 0755, true)){
-					//echo('sucesso');
+					echo('sucesso');
+					$_SESSION['usernam'] = "$username";
+					$_SESSION['success'] = "You are now logged in";
+					header('location: funcionario.php');
 				}
 				
 			}else{
 				//echo "Não criou";
 			}
-			/*$_SESSION['usernam'] = "$username";
-			$_SESSION['success'] = "You are now logged in";*/
-			//header('location: funcionario.php');
+			
 		}
 
 
