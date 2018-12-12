@@ -69,14 +69,12 @@
                             <!-- Nav Start -->
                             <div class="classynav">
                                 <ul>
-                                    <li><a href="paginicial.php">Home</a></li>
                                     <li><a href="#">Entrar como</a>
                                         <ul class="dropdown">
                                         <li><a href="alunologar.php">Aluno</a></li>
                                         <li><a href="logarfuncionario.php">Fiscal</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="about-us.html">Sobre nós</a></li>
                                 </ul>
                             </div>
                         </div>

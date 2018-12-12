@@ -1,5 +1,5 @@
 <?php session_start(); 
-include_once ('verificaSession.php');
+include_once ('verificaSessionFunc.php');
 
 ?>
 

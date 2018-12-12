@@ -1,5 +1,6 @@
 <?php
 session_start();
+include_once ('verificaSessionFunc.php');
 include ("server.php");
 $id_registo = $_GET['id'];
 $nome_registo = $_GET['nome'];

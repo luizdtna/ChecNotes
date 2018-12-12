@@ -45,7 +45,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="alunologar.php" class="nav-link">
+                <a href="sairAluno.php" class="nav-link">
                   <i class="fa fa-power-off"></i>
                   <p>Sair</p>
                 </a>

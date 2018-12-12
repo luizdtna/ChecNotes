@@ -10,22 +10,6 @@
 
 	// REGISTER USER
 	if (isset($_POST['reg_user'])) {
-		// receive all input values from the form
-		$username = mysqli_real_escape_string($db, $_POST['username']);
-		$snome = mysqli_real_escape_string($db, $_POST['snome']);
-		$dia = mysqli_real_escape_string($db, $_POST['dia']);
-		$mes = mysqli_real_escape_string($db, $_POST['mes']);
-		$ano = mysqli_real_escape_string($db, $_POST['ano']);
-		$email = mysqli_real_escape_string($db, $_POST['email']);
-		$telefone = mysqli_real_escape_string ($db, $_POST['telefone']);
-		$endereco = mysqli_real_escape_string ($db, $_POST['endereco']);
-		$cidade = mysqli_real_escape_string ($db, $_POST['cidade']);
-		$estado = mysqli_real_escape_string ($db, $_POST['estado']);
-		$pais = mysqli_real_escape_string ($db, $_POST['pais']);
-		
-		$password_1 = mysqli_real_escape_string($db, $_POST['password_1']);
-		$password_2 = mysqli_real_escape_string($db, $_POST['password_2']);
-
 		// form validation: ensure that the form is correctly filled
 		if (empty($username)) { array_push($errors, "Inserir o nome"); }
 		if (empty($snome)) { array_push($errors, "Inserir o o sobrenome"); }
@@ -40,6 +24,23 @@
 		if (empty($pais)) { array_push($errors, "Inserir o nome do país"); }
 		
 		if (empty($password_1)) { array_push($errors, "Digite a senha"); }
+		// receive all input values from the form
+		$username = mysqli_real_escape_string($db, $_POST['username']);
+		$snome = mysqli_real_escape_string($db, $_POST['snome']);
+		$dia = 0;
+		$mes = 0;
+		$ano = 0;
+		$email = mysqli_real_escape_string($db, $_POST['email']);
+		$telefone = mysqli_real_escape_string ($db, $_POST['telefone']);
+		$endereco = mysqli_real_escape_string ($db, $_POST['endereco']);
+		$cidade = mysqli_real_escape_string ($db, $_POST['cidade']);
+		$estado = mysqli_real_escape_string ($db, $_POST['estado']);
+		$pais = mysqli_real_escape_string ($db, $_POST['pais']);
+		
+		$password_1 = mysqli_real_escape_string($db, $_POST['password_1']);
+		$password_2 = mysqli_real_escape_string($db, $_POST['password_2']);
+
+		
 
 		if ($password_1 != $password_2) {
 			array_push($errors, "A senha está errada");
@@ -56,6 +57,7 @@
 			$_SESSION['username'] = $username;
 			$_SESSION['success'] = "You are now logged in";
 			header('location: logarfuncionario.php');
+		
 		}
 
 	}

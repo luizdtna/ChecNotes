@@ -1,4 +1,10 @@
-<?php include ('server1.php') ?>
+<?php
+
+
+include ('server1.php');
+include_once ('verificaSessionFunc.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 

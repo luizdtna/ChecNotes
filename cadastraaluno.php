@@ -16,7 +16,7 @@
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
     <!-- Favicon -->
-    <link rel="icon" href="img/core-img/favicon.ico">
+    <link rel="icon" href="img/core-img/icone.jpg">
 
     <!-- Core Stylesheet -->
     <link rel="stylesheet" href="style.css">
@@ -39,7 +39,7 @@
                     <div class="col-12 h-100">
                         <div class="header-content h-100 d-flex align-items-center justify-content-between">
                             <div class="academy-logo">
-                                <a href="index.html"><img src="img/core-img/logo.png" alt=""></a>
+                                <a href="funcionario.php"><img src="img/core-img/logo4.jpg" alt=""></a>
                             </div>
                             <div class="login-content">
                                 <!--<a href="#">Register / Login</a>-->
@@ -70,7 +70,7 @@
 
     <div class="col-lg-12 well">
     <div class="row">
-                <form method="get" action="cadastraaluno.php">
+                <form method="post" action="cadastraaluno.php">
 
                    <?php include('errors.php'); ?>
 
@@ -85,20 +85,7 @@
                                 <input type="text" name="snome" placeholder="Digite seu sobrenome" class="form-control">
                             </div>
                         </div>  
-                        <div class="row">
-                            <div class="col-sm-4 form-group">
-                                <label>Data de nascimento</label>
-                                <input type="text" name="dia" placeholder="Digite o dia" class="form-control">
-                            </div>  
-                            <div class="col-sm-4 form-group">
-                                <label>Mês</label>
-                                <input type="text" name="mes" placeholder="Digite o mês" class="form-control">
-                            </div>  
-                            <div class="col-sm-4 form-group">
-                                <label>Ano</label>
-                                <input type="text" name="ano" placeholder="Digite o ano" class="form-control" >
-                            </div>      
-                        </div>
+                        
                         <div class="form-group">
                         <label>Email</label>
                         <input type="email" name="email" placeholder="Digite seu email" class="form-control">

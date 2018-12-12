@@ -1,8 +1,9 @@
 
 <?php
-
 include_once ("server.php");
+
 session_start();
+include_once ('verificaSessionFunc.php');
 
 $query = "SELECT username, snome, email, universidade, curso, pais, anos   FROM registo WHERE pais='Brasil' order by username, id ASC "  ;
     

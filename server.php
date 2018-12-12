@@ -13,12 +13,15 @@
 
 	// REGISTER USER
 	if (isset($_POST['reg_user'])) {
+
+		
+
 		// receive all input values from the form
 		$username = mysqli_real_escape_string($db, $_POST['username']);
 		$snome = mysqli_real_escape_string($db, $_POST['snome']);
-		$dia = mysqli_real_escape_string($db, $_POST['dia']);
-		$mes = mysqli_real_escape_string($db, $_POST['mes']);
-		$ano = mysqli_real_escape_string($db, $_POST['ano']);
+		$dia = 0;
+		$mes = 0;
+		$ano = 0;
 		$email = mysqli_real_escape_string($db, $_POST['email']);
 		$telefone = mysqli_real_escape_string ($db, $_POST['telefone']);
 		$endereco = mysqli_real_escape_string ($db, $_POST['endereco']);
@@ -34,9 +37,6 @@
 		// form validation: ensure that the form is correctly filled
 		if (empty($username)) { array_push($errors, "Inserir o nome"); }
 		if (empty($snome)) { array_push($errors, "Inserir o o sobrenome"); }
-		if (empty($dia)) { array_push($errors, "Inserir o dia do nascimento"); }
-		if (empty($mes)) { array_push($errors, "Inserir o mês "); }
-		if (empty($ano)) { array_push($errors, "Inserir o ano"); }
 		if (empty($email)) { array_push($errors, "Inserir o email"); }
 		if (empty($telefone)) { array_push($errors, "Inserir o telefone"); }
 		if (empty($endereco)) { array_push($errors, "Inserir o endereço"); }
@@ -47,6 +47,7 @@
 		if (empty($curso)) { array_push($errors, "Inserir o nome do curso"); }
 		if (empty($anos)) { array_push($errors, "Inserir o ano"); }
 		if (empty($password_1)) { array_push($errors, "Digite a senha"); }
+		
 
 		if ($password_1 != $password_2) {
 			array_push($errors, "A senha está errada");
@@ -59,12 +60,32 @@
 				VALUES('$username', '$snome', '$dia', '$mes', '$ano', '$email',
 				     '$telefone','$endereco', '$cidade', '$estado','$pais', '$universidade','$curso','$anos','$password')";
 			mysqli_query($db, $sql);
+
 			session_unset();
 
-			$_SESSION['usernam'] = "$username";
-			$_SESSION['success'] = "You are now logged in";
-			header('location: alunologar.php');
+
+			
+
+			$sql2 = "SELECT id FROM `registo` WHERE `email` = '$email'";
+			
+			//echo $sql2;
+			$resultado2 = mysqli_query($db, $sql2) or die((mysqli_error($db)));
+			$dados2 = mysqli_fetch_assoc($resultado2); 
+			//echo $dados2['id']." espaço" ;
+			$idAluno = $dados2['id'];
+			if(mkdir(__DIR__.'/arquivos/'.$idAluno.'/', 0755, true)){
+				if(mkdir(__DIR__.'/arquivos/'.$idAluno.'/provas/', 0755, true)){
+					//echo('sucesso');
+				}
+				
+			}else{
+				//echo "Não criou";
+			}
+			/*$_SESSION['usernam'] = "$username";
+			$_SESSION['success'] = "You are now logged in";*/
+			//header('location: funcionario.php');
 		}
+
 
 	}
 
@@ -104,13 +125,23 @@
 				$_SESSION['username'] = $username;
 				$_SESSION['email'] = $email;
 				$_SESSION['id'] = $id;
-				$_SESSION['success'] =  "sucesso";
+				$_SESSION['success@#aluno'] =  "sucesso";
 				header('location: aluno.php');
 			}else {
 				array_push($errors, "Email/Senha está errado");
 			}
 		}
 	}
+		/*class classeDeArquivos 
+	{
+		
+		public function armazenarArquivoAluno($nomeArq, $caminho, $id_aluno){
+			$sql3 = "INSERT INTO `arquivos` (`nome_arquivo`, `caminho_arquivo`, `id_aluno`) VALUES ('$nomeArq', '$caminho', '$id_aluno');";
+			mysqli_query($GLOBALS['db'], $sql3);
 
+		}
+
+	}*/
+	
 ?>
 

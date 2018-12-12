@@ -1,7 +1,7 @@
 
 <?php
 session_start();
-
+include_once('verificaSessionAluno.php');
 ?>
 
 <!DOCTYPE html>

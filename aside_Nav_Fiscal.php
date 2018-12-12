@@ -56,6 +56,12 @@
                       <p>Meus Dados</p>
                     </a>
                   </li>
+                  <li class="nav-item">
+                    <a href="cadastraaluno.php" class="nav-link">
+                      <i class="fa fa-address-card-o"></i>
+                      <p>Novo Estudante</p>
+                    </a>
+                  </li>
                   <li class="nav-item has-treeview menu-open">
                 <a href="#" class="nav-link active">
                   <i class=""></i>

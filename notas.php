@@ -1,5 +1,18 @@
 <?php
+
 session_start();
+include_once('verificaSessionAluno.php');
+include_once('server.php');
+class classeDeArquivos 
+  {
+    
+    public function armazenarArquivoAluno($nomeArq, $caminho, $id_aluno){
+      $sql3 = "INSERT INTO `arquivos` (`nome_arquivo`, `caminho_arquivo`, `id_aluno`) VALUES ('$nomeArq', '$caminho', '$id_aluno');";
+      mysqli_query($GLOBALS['db'], $sql3);
+
+    }
+
+  }
 ?>
 <!DOCTYPE html>
 <html>
@@ -72,13 +85,41 @@ session_start();
                   echo $_SESSION['msg'];
                   unset($_SESSION['msg']);
               }
+              if(isset($_POST['SendCadImg'])){ //Verifica se o botão enviar_form foi pressionado
+                  $formatosPermitidos = array("png", "jpeg", "jpg", "gif", "txt"); 
+                  var_dump($_FILES);
+                  $extencao = pathinfo($_FILES['arquivo']['name'], PATHINFO_EXTENSION); //armazena a extenção (png, jpeg...)
+                  if(in_array($extencao, $formatosPermitidos)){ // Verifica se a extenção está no array de axtenções
+                    //mkdir('pasta2', 0755);
+
+                    $pasta = "arquivos/".$_SESSION['id']."/provas/";
+
+                    $temporario = $_FILES['arquivo']['tmp_name'];
+                    $novoNome = uniqid().".$extencao"; //concatenar o novo nome para o arquivo do upload
+                    if(move_uploaded_file($temporario, $pasta.$novoNome)){
+                      $caminho = $pasta.$novoNome;
+                      echo "upload feito com sucesso";
+
+                      $classeDeArq = new classeDeArquivos();
+                      $classeDeArq->armazenarArquivoAluno($_POST['nomeArquivo'], $caminho, $_SESSION['id']);
+                    }else{
+                      echo "ERRO";
+                    }
+                  }else{
+                    echo "Formato invalido";
+                  }
+              }
+
+
             ?>
-            <form method="POST" action="novoupload.php" enctype="multipart/form-data">
+
+
+            <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>" enctype="multipart/form-data">
                 <label>Nome do arquivo:</label>
-                <input type="text" name="nome" placeholder="Digitar o nome"><br><br>
+                <input type="text" name="nomeArquivo" placeholder="Digitar o nome" required><br><br>
                 
                 <label>Escolher o arquivo</label>
-                <input type="file" name="imagem"><br><br>
+                <input type="file" name="arquivo"><br><br>
                 
                 <input name="SendCadImg" class="btn btn-flat btn-primary" type="submit" value="Enviar">
             </form>

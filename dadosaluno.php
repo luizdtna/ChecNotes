@@ -1,5 +1,6 @@
 <?php 
 session_start();
+include_once('verificaSessionAluno.php');
 include_once ('server.php'); 
 
 //Fazer a pesquisa so aluno

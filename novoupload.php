@@ -4,7 +4,7 @@ session_start();
 include_once './conexao.php';
 include_once 'server.php';
 //Verificar se o usuário clicou no botão, clicou no botão acessa o IF e tenta cadastrar, caso contrario acessa o ELSE
-echo $_SESSION['email'];
+//echo $_SESSION['email'];
 
 
 
@@ -15,8 +15,11 @@ if ($SendCadImg) {
     $nome_imagem = $_FILES['imagem']['name'];
     //var_dump($_FILES['imagem']);
     //Inserir no BD
-     $result_img = "INSERT INTO arquivos (nome,caminho_arquivo,id_aluno) VALUES (:nome,:imagem,:id)";
+    echo "$nome<br>";
+    echo "$nome_imagem";
+     $result_img = "INSERT INTO arquivos (nome,caminho_arquivo,id_aluno) VALUES ('$nome',:imagem,:id)";
    # $result_img = "INSERT INTO imagens (nome, imagem) VALUES (:nome, :imagem)";
+     echo "$result_img";
     $resultado = mysqli_query($result_img);
     $dados = mysqli_fetch($resultado);
 
