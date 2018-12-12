@@ -99,9 +99,9 @@ $resultado2 = mysqli_query($db, $sql);
             while($dados = mysqli_fetch_array($resultado2)){ 
           ?>
           <tr>
-           
+          
             <td><?php echo $dados['nome_arquivo'] . "<br>"; ?></td>
-            <td><a href="<?php echo $dados['caminho_arquivo']; ?>" download><button class="btn btn-info">Baixar</button></a> <a href="index.php"><button class="btn btn-danger">Deletar</button></a></td>
+            <td><a href="<?php echo $dados['caminho_arquivo']; ?>" download><button class="btn btn-info">Baixar</button></a> <a href="deletarArquivo.php?caminho=<?php  echo $dados['caminho_arquivo'];?>&id_aluno=<?php echo $id_registo ?>"><button class="btn btn-danger">Deletar</button></a></td>
           </tr>
           
           <?php }?>
