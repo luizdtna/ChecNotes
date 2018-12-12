@@ -7,8 +7,8 @@
 	$errors = array(); 
 
 	// connect to database
-	$db = mysqli_connect('localhost:3308', 'root', '', 'tabela');
-
+	//$db = mysqli_connect('localhost:3308', 'root', '', 'tabela');
+	$db = mysql_connect('sql157.main-hosting.eu', 'u539041382_luiz', '123456', 'u539041382_teste');
 
 
 	// REGISTER USER
@@ -132,16 +132,7 @@
 			}
 		}
 	}
-		/*class classeDeArquivos 
-	{
 		
-		public function armazenarArquivoAluno($nomeArq, $caminho, $id_aluno){
-			$sql3 = "INSERT INTO `arquivos` (`nome_arquivo`, `caminho_arquivo`, `id_aluno`) VALUES ('$nomeArq', '$caminho', '$id_aluno');";
-			mysqli_query($GLOBALS['db'], $sql3);
-
-		}
-
-	}*/
 	
 ?>
 

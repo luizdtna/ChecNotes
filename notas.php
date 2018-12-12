@@ -82,12 +82,12 @@ class classeDeArquivos
          <div class="center">
             <?php
               if(isset($_SESSION['msg'])){
-                  echo $_SESSION['msg'];
+                 // echo $_SESSION['msg'];
                   unset($_SESSION['msg']);
               }
               if(isset($_POST['SendCadImg'])){ //Verifica se o botão enviar_form foi pressionado
-                  $formatosPermitidos = array("png", "jpeg", "jpg", "gif", "txt"); 
-                  var_dump($_FILES);
+                  $formatosPermitidos = array("png", "jpeg", "jpg", "pdf"); 
+                  //var_dump($_FILES);
                   $extencao = pathinfo($_FILES['arquivo']['name'], PATHINFO_EXTENSION); //armazena a extenção (png, jpeg...)
                   if(in_array($extencao, $formatosPermitidos)){ // Verifica se a extenção está no array de axtenções
                     //mkdir('pasta2', 0755);

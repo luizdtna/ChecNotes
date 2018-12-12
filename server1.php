@@ -6,7 +6,8 @@
 	// variable declaration
 	$errors = array();
 	// connect to database
-	$db = mysqli_connect('localhost:3308', 'root', '', 'tabela');
+	//$db = mysqli_connect('localhost:3308', 'root', '', 'tabela');
+	$db = mysql_connect('sql157.main-hosting.eu', 'u539041382_luiz', '123456', 'u539041382_teste');
 
 	// REGISTER USER
 	if (isset($_POST['reg_user'])) {
