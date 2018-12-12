@@ -132,16 +132,7 @@
 			}
 		}
 	}
-		/*class classeDeArquivos 
-	{
 		
-		public function armazenarArquivoAluno($nomeArq, $caminho, $id_aluno){
-			$sql3 = "INSERT INTO `arquivos` (`nome_arquivo`, `caminho_arquivo`, `id_aluno`) VALUES ('$nomeArq', '$caminho', '$id_aluno');";
-			mysqli_query($GLOBALS['db'], $sql3);
-
-		}
-
-	}*/
 	
 ?>
 

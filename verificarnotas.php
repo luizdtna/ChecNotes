@@ -101,7 +101,7 @@ $resultado2 = mysqli_query($db, $sql);
           <tr>
            
             <td><?php echo $dados['nome_arquivo'] . "<br>"; ?></td>
-            <td><a href="<?php echo $dados['caminho_arquivo']; ?>" download><button class="btn btn-info">baixar</button></a><button class="btn btn-danger">Deletar</button></td>
+            <td><a href="<?php echo $dados['caminho_arquivo']; ?>" download><button class="btn btn-info">Baixar</button></a> <a href="index.php"><button class="btn btn-danger">Deletar</button></a></td>
           </tr>
           
           <?php }?>
