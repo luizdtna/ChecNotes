@@ -57,12 +57,8 @@ include_once ('verificaSessionFunc.php');
          <center>       
           <div id="pnlMain" class="m-panel-body">
             <div id="m_m113" class="m-panelcontrol-box">
-              <a class="btn btn-app" href="dadosfuncionario.php">
-              <i class="fa fa-address-card-o"></i>Meus Dados</a>
-              <a class="btn btn-app" href="">
-              <i class="fa fa-lock"></i>Alterar senha</a>
-              <a class="btn btn-app" href="">
-              <i class="fa fa-envelope-o"></i>Alterar email</a>
+              <a class="btn btn-app" href="cadastraaluno.php">
+              <i class="fa fa-address-card-o"></i>Novo Aluno</a>
             </div>
           </div>
         </center>

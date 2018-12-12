@@ -28,9 +28,7 @@
         <div class="sidebar">
           <!-- Sidebar user panel (optional) -->
           <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-            <div class="image">
-              <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
-            </div>
+            
             <div class="info">
               <a href="#" class="d-block"><?php echo $_SESSION['nomeUserFunc'];  ?> </a>
             </div>
@@ -50,12 +48,7 @@
                 </a>
                 <ul class="nav nav-treeview">
                   
-                  <li class="nav-item">
-                    <a href="dadosfuncionario.php" class="nav-link">
-                      <i class="fa fa-address-card-o"></i>
-                      <p>Meus Dados</p>
-                    </a>
-                  </li>
+                  
                   <li class="nav-item">
                     <a href="cadastraaluno.php" class="nav-link">
                       <i class="fa fa-address-card-o"></i>
@@ -96,12 +89,7 @@
                   </li>
                 </ul>
               </li><br>
-              <li class="nav-item">
-                    <a href="tabelateste.php" class="nav-link">
-                      <i class="fa fa-power-off"></i>
-                      <p>Listas gerais</p>
-                    </a>
-                  </li><br>
+             
                   <li class="nav-item">
                     <a href="sair.php" class="nav-link">
                       <i class="fa fa-power-off"></i>
