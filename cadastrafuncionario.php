@@ -108,7 +108,8 @@
                         <div class="col-sm-4 form-group">
                             <label>País</label>
                             <input type="text" name="pais" placeholder="Digite o nome do país" class="form-control" required>
-                        </div>      
+                        </div>
+                       
                     </div>
                 </div>
                 <div class="col-sm-12">

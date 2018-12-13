@@ -60,7 +60,7 @@ include_once ('verificaSessionFunc.php');
               <a class="btn btn-app" href="dadosfuncionario.php">
               <i class="fa fa-address-card-o"></i>Meus Dados</a>
               <a class="btn btn-app" href="cadastraaluno.php">
-              <i class="fa fa-address-card-o"></i>Novo Aluno</a>
+              <i class="fa fa-user-plus fa-3x "></i>Novo Aluno</a>
             </div>
           </div>
         </center>

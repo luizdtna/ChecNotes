@@ -111,7 +111,16 @@
                             </div>  
                             <div class="col-sm-4 form-group">
                                 <label>País</label>
-                                <input type="text" name="pais" placeholder="Digite o nome do país" class="form-control" required>
+                                <select name="pais" class="form-control select2" style="width: 100%;" >
+                                    <option>Brasil</option>
+                                    <option>Estado Unidos</option>
+                                    <option>Austrália</option>
+                                    <option>Portugal</option>
+                                    <option>China</option>
+                                    <option>Japão</option>
+                                    <option>Argentina</option>
+                                    <option>Espanha</option>
+                                </select>
                             </div>      
                         </div>
                           

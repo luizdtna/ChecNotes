@@ -88,27 +88,13 @@ $dados = mysqli_fetch_array($resultado);
                             <div class="row">
                                 <div class="col-sm-6 form-group">
                                     <label>Nome</label>
-                                    <input type="text" name="username" class="form-control" value="123" readonly>
+                                    <input type="text" name="username" class="form-control" value="<?php echo $dados['username']; ?>" readonly>
                                 </div>
                                 <div class="col-sm-6 form-group">
                                     <label>Sobrenome</label>
                                     <input type="text" name="snome" class="form-control"  value="<?php echo $dados['snome']; ?>" readonly>
                                 </div>
                             </div>  
-                            <div class="row">
-                                <div class="col-sm-4 form-group">
-                                    <label>Data de nascimento</label>
-                                    <input type="text" name="dia" placeholder="Digite o dia" class="form-control" readonly>
-                                </div>  
-                                <div class="col-sm-4 form-group">
-                                    <label>Mês</label>
-                                    <input type="text" name="mes" placeholder="Digite o mês" class="form-control" readonly>
-                                </div>  
-                                <div class="col-sm-4 form-group">
-                                    <label>Ano</label>
-                                    <input type="text" name="ano" placeholder="Digite o ano" class="form-control" readonly>
-                                </div>      
-                            </div>
                             <div class="form-group">
                                 <label>Email</label>
                                 <input type="email" name="email" placeholder="Digite seu email" class="form-control" value="<?php echo $dados['email']; ?>">
@@ -134,9 +120,9 @@ $dados = mysqli_fetch_array($resultado);
                                 <div class="col-sm-3 form-group">
                                     <label>País</label>
                                     <input type="text" name="pais" placeholder="Digite o nome do país" class="form-control" value="<?php echo $dados['pais']; ?>" readonly>
+
                                 </div>      
                             </div>
-                              
                             
                             <div class="row">
                                 <div class="col-sm-3 form-group">

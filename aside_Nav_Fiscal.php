@@ -1,5 +1,13 @@
 
 
+<?php 
+include_once('server.php');
+$sql = "SELECT DISTINCT pais FROM `registo`";
+$resultado = mysqli_query($db,$sql);
+#$dados = mysqli_fetch_array($resultado);
+
+?>
+
   <!-- Navbar -->
       <nav class="main-header navbar navbar-expand bg-white navbar-light border-bottom">
         <!-- Left navbar links -->
@@ -49,50 +57,49 @@
                 <ul class="nav nav-treeview">
                   
                   <li class="nav-item">
-                    <a href="dadosfuncionario.php" class="nav-link">
-                      <i class="fa fa-address-card-o"></i>
-                      <p>Meus Dados</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
                     <a href="cadastraaluno.php" class="nav-link">
-                      <i class="fa fa-address-card-o"></i>
+                      <i class=""></i>
                       <p>Novo Estudante</p>
                     </a>
                   </li>
                   <li class="nav-item has-treeview menu-open">
+                    <a href="#" class="nav-link active">
+                      <i class="fa fa-address-card-o"></i>
+                      <p> Meus Dados
+                        <i class="right fa fa-angle-left"></i>
+                      </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                    <a href="dadosfuncionario.php" class="nav-link">
+                      <i class=""></i>
+                      <p>Alterar Meus Dados</p>
+                    </a>
+                    </li>
+                    <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class=""></i>
+                      <p>Alterar Senha</p>
+                    </a>
+                    </li>
+                  </ul>
+                  </li><br>
+                  <li class="nav-item has-treeview menu-open">
                 <a href="#" class="nav-link active">
-                  <i class=""></i>
+                 <i class="fa fa-globe fa-1x "></i>
                   <p> Estudantes em
                     <i class="right fa fa-angle-left"></i>
                   </p>
                 </a>
                 <ul class="nav nav-treeview">
+                  <?php while($dados = mysqli_fetch_array($resultado)){  ?>
                   <li class="nav-item">
-                    <a href="tabelapais.php?pais=Australia" class="nav-link">
+                    <a href="tabelapais.php?pais=<?php echo $dados['pais']; ?>" class="nav-link">
                       <i class=""></i>
-                      <p>Australia</p>
+                      <p><?php echo $dados['pais']; ?></p>
                     </a>
                   </li>
-                  <li class="nav-item">
-                    <a href="tabelapais.php?pais=Brasil" class="nav-link">
-                      <i class=""></i>
-                      <p>Brasil</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="tabelapais.php?pais=Estados Unidos" class="nav-link">
-                      <i class=""></i>
-                      <p>Estados Unidos</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="tabelapais.php?pais=Portugal" class="nav-link">
-                      <i class=""></i>
-                      <p>Portugal</p>
-                    </a>
-                  </li>
-                </ul>
+                <?php } ?>
               </li><br>
              
                   <li class="nav-item">
