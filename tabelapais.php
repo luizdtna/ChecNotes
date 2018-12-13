@@ -67,21 +67,9 @@ $query = "SELECT username, snome, email, universidade, curso, pais, anos   FROM 
      <?php include_once('aside_Nav_Fiscal.php') ?>
       <!-- Content Wrapper. Contains page content -->
       <div class="content-wrapper">
+        <br>
         <!-- Content Header (Page header) -->
-        <div class="content-header">
-          <div class="container-fluid">
-            <div class="row mb-2">
-              <div class="col-sm-6">
-              </div><!-- /.col -->
-              <div class="col-sm-6">
-                <ol class="breadcrumb float-sm-right">
-                  <li class="breadcrumb-item"><a href="#">Home</a></li>
-                  <li class="breadcrumb-item active">METL</li>
-                </ol>
-              </div><!-- /.col -->
-            </div><!-- /.row -->
-          </div><!-- /.container-fluid -->
-        </div>
+       
         <center><h1>Lista e Aproveitamentos dos Estudantes: <?php echo $_GET['pais'] ?> </h1></center><br><br>
         <?php include_once ('listaalunos.php');  ?>
       </div>

@@ -1,12 +1,30 @@
 <?php
 
 include ('server1.php');
-
-include_once ('verificaSessionFunc.php');
 $id = $_SESSION['id'];
 $sql = "SELECT * FROM funcionario WHERE id='$id';";
-$resultado = mysqli_query($db, $sql);
-$dados = mysqli_fetch_array($resultado);
+    $resultado = mysqli_query($db, $sql);
+    $dados = mysqli_fetch_array($resultado);
+
+if(isset($_POST['atualizar-reg'])){
+    $endereco = $_POST['endereco'];
+    $email = $_POST['email'];
+    $telefone = $_POST['telefone'];
+    $cidade = $_POST['cidade'];
+    $estado = $_POST['estado'];
+    $pais = $_POST['pais'];
+
+
+    include_once ('verificaSessionFunc.php');
+    
+
+    $sql2 = "UPDATE `funcionario` SET `email` = '$email', `telefone` = '$telefone', `endereco` = '$endereco', `cidade` = '$cidade', `estado` = '$estado', `pais` = '$pais'WHERE `id` = $id";
+    mysqli_query($db,$sql2);
+    header('location: funcionario.php');
+
+
+    
+}
 ?>
 
 <!DOCTYPE html>
@@ -73,14 +91,15 @@ $dados = mysqli_fetch_array($resultado);
     <!-- ##### Header Area End ##### -->
 
     <!-- ##### Hero Area Start ##### -->
-    <div class="container">
+    <div class="container" style="margin-left: 300px;">
+   
+
+
+
+    <div class="col-lg-6 well">
     <center><h1 class="well">Dados do Supervisor</h1></center>
-
-
-
-    <div class="col-lg-12 well">
     <div class="row">
-                <form method="post" action="cadastrafuncionario.php">
+                <form method="post" action="dadosfuncionario.php">
 
                    <?php include('errors.php'); ?>
 
@@ -120,38 +139,15 @@ $dados = mysqli_fetch_array($resultado);
                             </div>  
                             <div class="col-sm-4 form-group">
                                 <label>País</label>
-                                <input type="text" name="pais"  class="form-control" value="<?php echo $dados['pais']; ?>">
+                                <input type="text" name="pais"  class="form-control" value="<?php echo $dados['pais']; ?>" readonly>
                             </div>      
                         </div>
                        
                         </div>
-                        <div class="col-sm-12">
-                            <div class="row">
-
-                                <div class="col-sm-3 form-group">
-                                    <label>Senha atual</label>
-                                    <input type="password" name="password_1" placeholder="Senha atualizar-reg" class="form-control">
-                                </div>      
-                                <div class="col-sm-3 form-group">
-                                    <label>Confirmar senha</label>
-                                    <input type="password" name="password_2" placeholder="Confirmar sua senha" class="form-control">
-                                </div>
-                                <div class="col-sm-3 form-group">
-                                    <label>Repetir nova senha</label>
-                                    <input type="password" name="password_2" placeholder="Confirmar sua senha" class="form-control">
-                                </div>
-
-
-                            </div>  <br/>               
                         
-                        <!--<div class="form-group">
-                            <label>Website</label>
-                            <input type="text" placeholder="Enter Website Name Here.." class="form-control">
-                        </div>-->
-                            </div>
                         <div class="input-group">
                             <div>
-                                <button type="submit" class="btn" name="atualizar-reg">Atualizar</button>
+                                <button type="submit" class="btn btn-success" name="atualizar-reg" style="margin-left: 15px">Atualizar</button>
                             </div>
                         </div>
                 </form> 

@@ -76,12 +76,6 @@ $resultado = mysqli_query($db,$sql);
                       <p>Alterar Meus Dados</p>
                     </a>
                     </li>
-                    <li class="nav-item">
-                    <a href="#" class="nav-link">
-                      <i class=""></i>
-                      <p>Alterar Senha</p>
-                    </a>
-                    </li>
                   </ul>
                   </li><br>
                   <li class="nav-item has-treeview menu-open">
@@ -101,7 +95,7 @@ $resultado = mysqli_query($db,$sql);
                   </li>
                 <?php } ?>
               </li><br>
-             
+             </ul>
                   <li class="nav-item">
                     <a href="sair.php" class="nav-link">
                       <i class="fa fa-power-off"></i>
@@ -110,6 +104,7 @@ $resultado = mysqli_query($db,$sql);
                   </li>
                 </ul>
               </li>
+
                 
         <!-- /.sidebar -->
       </aside>
