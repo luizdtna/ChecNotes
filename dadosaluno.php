@@ -5,9 +5,27 @@ include_once ('server.php');
 
 //Fazer a pesquisa so aluno
 $email = $_SESSION['email'];
-$sql = "SELECT * FROM registo WHERE email='$email' ;";
+$id = $_SESSION['id'];
+$sql = "SELECT * FROM registo WHERE id='$id' ;";
 $resultado = mysqli_query($db, $sql);
 $dados = mysqli_fetch_array($resultado);
+
+if(isset($_POST['atualizar-reg'])){
+    $endereco = $_POST['endereco'];
+    $email = $_POST['email'];
+    $telefone = $_POST['telefone'];
+    $cidade = $_POST['cidade'];
+    $estado = $_POST['estado'];
+    $pais = $_POST['pais'];
+
+
+    include_once ('verificaSessionFunc.php');
+    
+
+    $sql2 = "UPDATE `registo` SET `email` = '$email', `telefone` = '$telefone', `endereco` = '$endereco', `cidade` = '$cidade', `estado` = '$estado' WHERE `id` = $id";
+    mysqli_query($db,$sql2);
+    header('location: aluno.php');
+}
 
 ?>
 
@@ -75,10 +93,11 @@ $dados = mysqli_fetch_array($resultado);
         <!-- ##### Header Area End ##### -->
 
         <!-- ##### Hero Area Start ##### -->
-        <div class="container">
-        <center><h1 class="well">Dados do aluno</h1></center>
+        <div class="container" style="margin-left: 380px">
+        
 
-        <div class="col-lg-12 well">
+        <div class="col-lg-5 well">
+            <center><h1 class="well">Dados do aluno</h1></center>
             <div class="row">
                     <form method="post" action="dadosaluno.php">
 
@@ -134,41 +153,19 @@ $dados = mysqli_fetch_array($resultado);
                                     <label>Curso</label>
                                     <input type="text" name="curso" placeholder="Digite o nome do curso" class="form-control" value="<?php echo $dados['curso']; ?>" readonly>
                                 </div>  
-                                <div class="col-sm-3 form-group">
-                                    <label>Ano de início do curso</label>
+                                <div class="col-sm-5 form-group">
+                                    <label>Ano de início</label>
                                     <input type="text" name="anos" placeholder="Digite o ano do início do curso" class="form-control" value="<?php echo $dados['anos']; ?>" readonly>
                                 </div>      
                             </div>
                         </div>
-                            <div class="col-sm-12">
-                            <div class="row">
-
-                                <div class="col-sm-3 form-group">
-                                    <label>Senha atual</label>
-                                    <input type="password" name="password_1" placeholder="Senha atualizar-reg" class="form-control">
-                                </div>      
-                                <div class="col-sm-3 form-group">
-                                    <label>Confirmar senha</label>
-                                    <input type="password" name="password_2" placeholder="Confirmar sua senha" class="form-control">
-                                </div>
-                                <div class="col-sm-3 form-group">
-                                    <label>Repetir nova senha</label>
-                                    <input type="password" name="password_2" placeholder="Confirmar sua senha" class="form-control">
-                                </div>
-
-
-                            </div>  <br/>               
-                        
-                        <!--<div class="form-group">
-                            <label>Website</label>
-                            <input type="text" placeholder="Enter Website Name Here.." class="form-control">
-                        </div>-->
-                            </div>
-                        <div class="input-group">
+                           <div class="input-group">
                             <div>
-                                <button type="submit" class="btn" name="atualizar-reg">Atualizar</button>
+                                <button type="submit" class="btn btn-success" name="atualizar-reg" style="margin-left: 15px">Atualizar</button>
                             </div>
                         </div>
+
+                </div>  <br/>               
                     </form> 
             </div>
         </div>
